@@ -586,7 +586,7 @@ public class JapaneseFlagView extends View implements OnTouchListener {
 				
 				if (motion_event_outside){
 					runSecondAction();
-					if (callback != null) callback.onCancel();
+					if (callback != null) callback.shouldCancel();
 				}else{
 					runThirdAction();
 					if (callback != null) callback.shouldSendRecord();
@@ -643,10 +643,10 @@ public class JapaneseFlagView extends View implements OnTouchListener {
 	
 	public interface Callback{
 		public void onTouch();
-		public void onCancel();
 		public void onMoveOutside();
 		public void onMoveInside();
 		public void didNotStart();
+		public void shouldCancel();
 		public void shouldStartRecord();
 		public void shouldSendRecord();
 		
